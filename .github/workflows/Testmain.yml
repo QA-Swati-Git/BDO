@@ -23,7 +23,6 @@ jobs:
     - name: Install Playwright
       run: mvn --file pom.xml exec:java -e -D exec.mainClass=com.microsoft.playwright.CLI -D exec.args="install --with-deps"
     - name: Build with Maven
-      run: mvn --file pom.xml -B install -D skipTests
-    - name: Run tests in Chrome
-      run: mvn -Dtest=testng_regression.xml -DbrowserName=chromium -Dheaded=true test
+      run: mvn -B package --file pom.xml
+
 
