@@ -31,12 +31,9 @@
 			</plugin>
 
 			<plugin>
-				<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
-
                          <groupId>org.apache.maven.plugins</groupId>
                          <artifactId>maven-surefire-plugin</artifactId>
                             <version>3.0.0-M9</version>
-
 				<configuration>
 					<useSystemClassLoader>false</useSystemClassLoader>
 				<testFailureIgnore>true</testFailureIgnore>
