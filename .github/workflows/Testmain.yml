@@ -19,11 +19,11 @@ jobs:
        distribution: 'temurin'
        java-version: '17'
     - name: Build & Install
-      run: mvn --file BDO_Test/pom.xml -B install -D skipTests --no-transfer-progress
+      run: mvn --file pom.xml -B install -D skipTests --no-transfer-progress
     - name: Install Playwright
-      run: mvn --file BDO_Test/pom.xml exec:java -e -D exec.mainClass=com.microsoft.playwright.CLI -D exec.args="install --with-deps"
+      run: mvn --file pom.xml exec:java -e -D exec.mainClass=com.microsoft.playwright.CLI -D exec.args="install --with-deps"
     - name: Build with Maven
-      run: mvn --file BDO_Test/pom.xml -B install -D skipTests
+      run: mvn --file pom.xml -B install -D skipTests
     - name: Run tests in Chrome
       run: mvn -Dtest=testng_regression.xml -DbrowserName=chromium -Dheaded=true test
 
