@@ -19,10 +19,10 @@ jobs:
        distribution: 'temurin'
        java-version: '17'
     - name: Build & Install
-      run: mvn --file pom.xml -B install
+      run: mvn -B install --file pom.xml -D skipTests --no-transfer-progress
     - name: Install Playwright
-      run: mvn --file pom.xml exec:java -e -D exec.mainClass=com.microsoft.playwright.CLI -D exec.args="install --with-deps"
-    - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      run: mvn exec:java -e -D exec.mainClass=com.microsoft.playwright.CLI -D exec.args="install --with-deps"
+    - name: Run tests
+      run: mvn test
 
 
